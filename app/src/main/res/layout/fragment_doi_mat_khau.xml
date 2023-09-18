@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.DoiMatKhauFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/keylogo"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:hint="Mật khẩu Cũ"
+            app:hintTextColor="#FF5722"
+            app:boxStrokeColor="#FF5722"
+            app:boxBackgroundMode="filled"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="true"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/edMatKhauCu"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_gravity="center"            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Mật khẩu mới"
+            app:hintTextColor="#FF5722"
+            app:boxStrokeColor="#FF5722"
+            app:boxBackgroundMode="filled"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="true"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/edMatkhauMoi"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_gravity="center"            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Nhập lại mật khẩu mới"
+            app:hintTextColor="#FF5722"
+            app:boxStrokeColor="#FF5722"
+            app:boxBackgroundMode="filled"
+            app:endIconMode="password_toggle"
+            app:hintEnabled="true"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/edNhapLai"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLuu"
+                android:layout_width="170dp"
+                android:layout_marginHorizontal="5dp"
+                android:layout_height="wrap_content"
+                android:text="Lưu"
+                app:icon="@drawable/baseline_save_24"
+                app:iconGravity="textStart"
+                android:backgroundTint="@color/orangepoly"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnHuy"
+                app:iconTint="@color/black"
+                app:iconGravity="textStart"
+                app:icon="@drawable/baseline_highlight_off_24"
+                android:layout_marginHorizontal="5dp"
+                android:layout_width="170dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray"
+                android:text="Hủy"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

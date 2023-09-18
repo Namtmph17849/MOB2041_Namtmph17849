@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingTop="20dp">
+<EditText
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:hint="Mã Phiếu Mượn"
+    android:id="@+id/edMaPhieuMuon"/>
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:id="@+id/spThanhVien"
+        />
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
+        android:id="@+id/spTenSach"
+        />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNgay"
+        android:text="Ngày: "/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTienThue"
+        android:text="Tiền thuê: "/>
+    <CheckBox
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Lưu mật khẩu"
+        android:id="@+id/chkTrSach"
+        android:theme="@style/checkbox_color"
+        android:paddingEnd="220dp"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLuu"
+            android:layout_width="170dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:text="Lưu"
+            app:iconGravity="textStart"
+            android:backgroundTint="@color/orangepoly"
+            app:icon="@drawable/baseline_save_24"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHuy"
+            app:iconTint="@color/black"
+            app:iconGravity="textStart"
+            app:icon="@drawable/baseline_highlight_off_24"
+            android:layout_marginHorizontal="5dp"
+            android:layout_width="170dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:text="Hủy"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:gravity="center">
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Tên thành viên"
+        android:id="@+id/TenTV"/>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Năm sinh"
+        android:id="@+id/edNamsinh"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLuu"
+            android:layout_width="170dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_height="wrap_content"
+            android:text="Lưu"
+            app:iconGravity="textStart"
+            android:backgroundTint="@color/orangepoly"
+            app:icon="@drawable/baseline_save_24"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHuy"
+            app:iconTint="@color/black"
+            app:iconGravity="textStart"
+            app:icon="@drawable/baseline_highlight_off_24"
+            android:layout_marginHorizontal="5dp"
+            android:layout_width="170dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/gray"
+            android:text="Hủy"/>
+    </LinearLayout>
+</LinearLayout>

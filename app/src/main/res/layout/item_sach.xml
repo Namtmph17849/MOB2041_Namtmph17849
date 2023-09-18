@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTenSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên Sách: Photoshop"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/tvMaSach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã sách: 1" />
+
+        <TextView
+            android:id="@+id/tvGiaThue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giá thuê: 5000" />
+
+        <TextView
+            android:id="@+id/tvMaLoai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã loại sách: 1" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/imgXoaSach"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/baseline_delete_24" />
+</LinearLayout>

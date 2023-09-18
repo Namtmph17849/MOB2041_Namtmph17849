@@ -1,0 +1,8 @@
+
+<resources>
+
+    <style name="checkbox_color" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorAccent">@color/orangepoly</item>
+        <item name="android:textColorSecondary">@color/orangepoly</item>
+    </style>
+</resources>

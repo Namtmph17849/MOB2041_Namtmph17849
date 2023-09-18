@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.ThongKeFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black"
+            android:id="@+id/btnTuNgay"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="TỪ NGÀY "/>
+        <EditText
+            android:id="@+id/tvTuNgay"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:hint="2023-09-23"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:backgroundTint="@color/gray"
+            android:textColor="@color/black"
+            android:id="@+id/btnDenNgay"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="ĐẾN NGÀY "/>
+        <EditText
+            android:id="@+id/tvDenNgay"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:hint="2023-09-23"/>
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="40dp"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                app:icon="@drawable/baseline_monetization_on_24"
+                app:iconGravity="textStart"
+                android:backgroundTint="@color/orangepoly"
+                android:layout_width="340dp"
+                app:iconSize="30dp"
+                android:layout_height="wrap_content"
+                android:text="DOANH THU"/>
+
+            <TextView
+                android:paddingTop="30dp"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="Doanh thu: 2000000đ"
+                android:textSize="20dp"/>
+        </LinearLayout>
+</LinearLayout>
+</FrameLayout>
