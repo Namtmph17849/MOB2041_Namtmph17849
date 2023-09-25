@@ -1,10 +1,13 @@
 package com.example.mob2041_namtmph17849.Model;
 
 public class Sach {
-    private int maSach;
-    private String tenSach;
-    private int maLoai;
-    private int giaThue;
+    public int maSach;
+    public String tenSach;
+    public int maLoai;
+    public int giaThue;
+
+    public Sach() {
+    }
 
     public Sach(int maSach, String tenSach, int maLoai, int giaThue) {
         this.maSach = maSach;
