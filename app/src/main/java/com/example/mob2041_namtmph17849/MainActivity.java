@@ -1,10 +1,13 @@
 package com.example.mob2041_namtmph17849;
 
 import android.app.Notification;
+import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 
 import com.example.mob2041_namtmph17849.Fragment.DoiMatKhauFragment;
@@ -36,6 +39,9 @@ import com.example.mob2041_namtmph17849.databinding.ActivityNavigationBinding;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     Toolbar toolbar;
+    TextView tvNameAccount;
+
+    View headerView;
     private DrawerLayout drawerLayout;
      NavigationView navigationView;
 
@@ -71,6 +77,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         replaceFragment(new QuanLyPhieuMuonFragment());
         navigationView.getMenu().findItem(R.id.navQuanLyPhieuMuon).setChecked(true);
+
+        headerView = navigationView.getHeaderView(0);
+        tvNameAccount = headerView.findViewById(R.id.tvTenTK);
+        Intent i = getIntent();
+        String user = i.getStringExtra("user");
+        tvNameAccount.setText("Welcome "+user+"!");
+
+        if(user.equalsIgnoreCase("admin")){
+            navigationView.getMenu().findItem(R.id.navThemNguoiDung).setVisible(true);
+        }
+
     }
 
 
@@ -80,54 +97,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if(id == R.id.navQuanLyPhieuMuon){
             if(currentFragment != FRAG_PHIEUMUON){
+                setTitle("Quản lý phiếu mượn");
                 replaceFragment(new QuanLyPhieuMuonFragment());
                 currentFragment = FRAG_PHIEUMUON;
             }
 
         }else if(id == R.id.navQuanlyLoai){
             if(currentFragment != FRAG_LOAI){
+                setTitle("Quản lý loại sách");
                 replaceFragment(new QuanLyLoaiFragment());
                 currentFragment = FRAG_LOAI;
             }
 
         }else if(id == R.id.navQuanlySach){
             if(currentFragment != FRAG_SACH){
+                setTitle("Quản lý sách");
                 replaceFragment(new QuanLySachFragment());
                 currentFragment = FRAG_SACH;
             }
 
         }else if(id == R.id.navQuanLyTV){
             if(currentFragment != FRAG_TV){
+                setTitle("Quản lý thành viên");
                 replaceFragment(new QuanLyThanhVienFragment());
                 currentFragment = FRAG_TV;
             }
 
         }else if(id == R.id.navTopSachMuon){
             if(currentFragment != FRAG_TOP){
+                setTitle("Top 10");
                 replaceFragment(new Top10Fragment());
                 currentFragment = FRAG_TOP;
             }
 
         }else if(id == R.id.navThongKe){
             if(currentFragment != FRAG_THONGKE){
+                setTitle("Thống kê doanh thu");
                 replaceFragment(new ThongKeFragment());
                 currentFragment = FRAG_THONGKE;
             }
 
         }else if(id == R.id.navThemNguoiDung){
             if(currentFragment != FRAG_THEMND){
+                setTitle("Thêm người dùng");
                 replaceFragment(new ThemNguoiDungFragment());
                 currentFragment = FRAG_THEMND;
             }
 
         }else if(id == R.id.navDoiMatKhau) {
             if(currentFragment != FRAG_DOIMK){
+                setTitle("Dổi mật khẩu");
                 replaceFragment(new DoiMatKhauFragment());
                 currentFragment = FRAG_DOIMK;
             }
 
         }else if(id == R.id.navDangXuat){
-
+            startActivity(new Intent(getApplicationContext(),DangNhapActivity.class));
+            finish();
         }
 
         drawerLayout.closeDrawer(GravityCompat.START);

@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingTop="20dp"
+    android:background="@color/white"
     android:orientation="vertical"
     android:gravity="center">
     <EditText
@@ -25,6 +26,12 @@
         android:layout_height="wrap_content"
         android:hint="Mật khẩu"
         android:id="@+id/edMatKhau"/>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="Nhập lại mật khẩu"
+        android:id="@+id/edNhapLai"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,6 +44,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
             android:text="Lưu"
+            android:layout_weight="1"
             app:iconGravity="textStart"
             android:backgroundTint="@color/orangepoly"
             app:icon="@drawable/baseline_save_24"
@@ -45,6 +53,7 @@
             android:id="@+id/btnHuy"
             app:iconTint="@color/black"
             app:iconGravity="textStart"
+            android:layout_weight="1"
             app:icon="@drawable/baseline_highlight_off_24"
             android:layout_marginHorizontal="5dp"
             android:layout_width="170dp"

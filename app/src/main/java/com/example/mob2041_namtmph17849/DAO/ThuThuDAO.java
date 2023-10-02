@@ -29,8 +29,9 @@ public class ThuThuDAO {
         return db.insert("ThuThu", null, values);
     }
 
-    public int update(ThuThu obj){
+    public int updatePass(ThuThu obj){
         ContentValues values = new ContentValues();
+
         values.put("hoTen", obj.hoTen);
         values.put("matKhau", obj.matKhau);
 
@@ -65,5 +66,12 @@ public class ThuThuDAO {
                 list.add(obj);
             }
         return list;
+    }
+    public int checkLogin(String id, String password){
+        String sql = "SELECT * FROM ThuThu  WHERE maTT=? AND matKhau=?";
+        List<ThuThu> list = getData(sql,id,password);
+        if(list.size() == 0)
+            return -1;
+        return 1;
     }
 }

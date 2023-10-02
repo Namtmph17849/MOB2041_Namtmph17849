@@ -37,6 +37,7 @@
             <menu>
                 <item
                     android:id="@+id/navThemNguoiDung"
+                    android:visible="false"
                     android:icon="@drawable/baseline_person_add_alt_1_24"
                     android:title="Thêm người dùng" />
                 <item
