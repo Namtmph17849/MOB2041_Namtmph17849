@@ -59,6 +59,7 @@ public class LoaiSachDAO {
         Cursor c = db.rawQuery(sql, selectionArgs);
             while (c.moveToNext()){
                 LoaiSach obj = new LoaiSach();
+                obj.maLoai = c.getInt(c.getColumnIndex("maLoai"));
                 obj.hoTen = c.getString(c.getColumnIndex("hoTen"));
                 list.add(obj);
             }

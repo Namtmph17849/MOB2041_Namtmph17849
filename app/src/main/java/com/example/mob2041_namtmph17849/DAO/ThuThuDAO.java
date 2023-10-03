@@ -23,6 +23,7 @@ public class ThuThuDAO {
     }
     public long insert(ThuThu obj){
         ContentValues values = new ContentValues();
+        values.put("maTT", obj.maTT);
         values.put("hoTen", obj.hoTen);
         values.put("matKhau", obj.matKhau);
 
@@ -31,7 +32,6 @@ public class ThuThuDAO {
 
     public int updatePass(ThuThu obj){
         ContentValues values = new ContentValues();
-
         values.put("hoTen", obj.hoTen);
         values.put("matKhau", obj.matKhau);
 
@@ -61,6 +61,7 @@ public class ThuThuDAO {
         Cursor c = db.rawQuery(sql, selectionArgs);
             while (c.moveToNext()){
                 ThuThu obj = new ThuThu();
+                obj.maTT = c.getString(c.getColumnIndex("maTT"));
                 obj.hoTen = c.getString(c.getColumnIndex("hoTen"));
                 obj.matKhau = c.getString(c.getColumnIndex("matKhau"));
                 list.add(obj);

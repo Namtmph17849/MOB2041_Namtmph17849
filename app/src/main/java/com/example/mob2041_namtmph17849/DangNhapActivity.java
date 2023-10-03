@@ -33,6 +33,7 @@ public class DangNhapActivity extends AppCompatActivity {
         dao = new ThuThuDAO(this);
 
         SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
         edTenDangNhap.setText(pref.getString("USERNAME",""));
         edMatKhau.setText(pref.getString("PASSWORD",""));
         chkLuuMK.setChecked(pref.getBoolean("REMEMBER", false));
@@ -64,6 +65,8 @@ public class DangNhapActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Đăng nhập thành công!",
                         Toast.LENGTH_SHORT).show();
                 rememberUser(strTK,strMK,chkLuuMK.isChecked());
+//                saveUser(edTenDangNhap.getText().toString(), edMatKhau.getText().toString());
+
 
                 Intent i = new Intent(getApplicationContext(),MainActivity.class);
                 i.putExtra("user", strTK);
@@ -89,4 +92,13 @@ public class DangNhapActivity extends AppCompatActivity {
         }
         edit.commit();
     }
+//    public void saveUser(String u, String p){
+//        SharedPreferences pref = getSharedPreferences("USER_FILE", MODE_PRIVATE);
+//        SharedPreferences.Editor edit = pref.edit();
+//
+//        edit.putString("USERNAME",u);
+//        edit.putString("PASSWORD",p);
+//
+//        edit.commit();
+//    }
 }

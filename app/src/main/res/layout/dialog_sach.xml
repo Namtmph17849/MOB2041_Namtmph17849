@@ -7,22 +7,28 @@
     android:paddingTop="20dp"
     android:gravity="center">
     <EditText
-        android:layout_width="350dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Mã Sách"
+        android:id="@+id/edMaSach"/>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Tên Sách"
         android:id="@+id/edTenSach"/>
     <EditText
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Giá Thuê"
         android:id="@+id/edGiaThue"/>
     <EditText
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Mã Loại "
-        android:id="@+id/edMaPhieuMuon"/>
+        android:id="@+id/edMaLoai"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +41,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
             android:text="Lưu"
+            android:layout_weight="1"
             app:iconGravity="textStart"
             android:backgroundTint="@color/orangepoly"
             app:icon="@drawable/baseline_save_24"
@@ -43,6 +50,7 @@
             android:id="@+id/btnHuy"
             app:iconTint="@color/black"
             app:iconGravity="textStart"
+            android:layout_weight="1"
             app:icon="@drawable/baseline_highlight_off_24"
             android:layout_marginHorizontal="5dp"
             android:layout_width="170dp"

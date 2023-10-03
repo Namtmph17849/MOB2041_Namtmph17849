@@ -8,7 +8,13 @@
     android:paddingTop="20dp"
     android:background="@color/white">
     <EditText
-        android:layout_width="350dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Mã Loại Sách"
+        android:id="@+id/edMaLoaiSach"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:hint="Tên Loại Sách"
         android:id="@+id/edTenLoaiSach"/>
@@ -24,6 +30,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
             android:text="Lưu"
+            android:layout_weight="1"
             app:iconGravity="textStart"
             android:backgroundTint="@color/orangepoly"
             app:icon="@drawable/baseline_save_24"
@@ -32,6 +39,7 @@
             android:id="@+id/btnHuy"
             app:iconTint="@color/black"
             app:iconGravity="textStart"
+            android:layout_weight="1"
             app:icon="@drawable/baseline_highlight_off_24"
             android:layout_marginHorizontal="5dp"
             android:layout_width="170dp"

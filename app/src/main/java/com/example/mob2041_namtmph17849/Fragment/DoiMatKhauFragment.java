@@ -54,9 +54,8 @@ public class DoiMatKhauFragment extends Fragment {
                 if(validate()>0){
                     ThuThu thuThu = dao.getID(user);
                     thuThu.matKhau = edPassMoi.getText().toString();
-//                    dao.update(thuThu);
+                    dao.updatePass(thuThu);
                     if(dao.updatePass(thuThu)>0){
-
                         Toast.makeText(getActivity(),"Thay đổi mật khẩu thành công!",Toast.LENGTH_SHORT).show();
                         edPassCu.setText("");
                         edPassMoi.setText("");
@@ -73,7 +72,7 @@ public class DoiMatKhauFragment extends Fragment {
     public int validate(){
         int check = 1;
         if(edPassCu.getText().length()==0 || edPassMoi.getText().length()==0 || edNhapLai.getText().length()==0){
-            Toast.makeText(getActivity(),"Bạn phải nhập đầy đủ thông tin",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),"Bạn phải nhập đầy đủ thông tin",Toast.LENGTH_SHORT).show();
             check = -1;
         }else {
             SharedPreferences pref = getActivity().getSharedPreferences("USER_FILE",Context.MODE_PRIVATE);
@@ -82,11 +81,12 @@ public class DoiMatKhauFragment extends Fragment {
             String nhapLai = edNhapLai.getText().toString();
 
             if(!passCu.equals(edPassCu.getText().toString())){
-                Toast.makeText(getActivity(),"Mật khẩu cũ sai",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Mật khẩu cũ sai",Toast.LENGTH_SHORT).show();
                 check=-1;
+                return check;
             }
             if(!pass.equals(nhapLai)){
-                Toast.makeText(getActivity(),"Mật khẩu không trung khớp",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"Mật khẩu không trung khớp",Toast.LENGTH_SHORT).show();
                 check=-1;
             }
         }

@@ -8,31 +8,32 @@
     android:orientation="vertical"
     android:gravity="center">
     <EditText
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Mã thủ thư"
         android:id="@+id/edMaTT"/>
 
     <EditText
         android:id="@+id/edTenTT"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Tên thủ thư" />
 
     <EditText
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Mật khẩu"
         android:id="@+id/edMatKhau"/>
     <EditText
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="Nhập lại mật khẩu"
         android:id="@+id/edNhapLai"/>
     <LinearLayout
+        android:layout_weight="2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

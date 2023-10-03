@@ -7,6 +7,7 @@
 
     <LinearLayout
         android:layout_width="341dp"
+        android:layout_weight="2"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -30,6 +31,7 @@
             android:text="Thành viên: Tú Sena" />
     </LinearLayout>
     <ImageView
+        android:layout_weight="1"
         android:id="@+id/imgXoaTV"
         android:layout_width="40dp"
         android:layout_height="match_parent"

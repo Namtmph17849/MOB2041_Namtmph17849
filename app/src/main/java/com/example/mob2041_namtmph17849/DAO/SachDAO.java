@@ -15,31 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SachDAO {
-    DbHelper dbHelper;
-    SQLiteDatabase db;
+
+    private SQLiteDatabase db;
+
+
+
     public SachDAO(Context context){
-        dbHelper = new DbHelper(context);
-    }
-
-
-
-    public ArrayList<Sach> getDSDauSach(){
-        ArrayList<Sach> list = new ArrayList<>();
-        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery(" select * from Sach", null);
-        if(cursor.getCount() !=0){
-            cursor.moveToFirst();
-            do{
-                list.add(new Sach(cursor.getInt(0), cursor.getString(1),
-                        cursor.getInt(2), cursor.getInt(3)));
-            }while (cursor.moveToNext());
-        }
-
-        return list;
+        DbHelper dbHelper = new DbHelper(context);
+        db = dbHelper.getWritableDatabase();
     }
     public long insert(Sach obj){
         ContentValues values = new ContentValues();
-        values.put("maSach", obj.maSach);
         values.put("tenSach", obj.tenSach);
         values.put("giaThue", obj.giaThue);
         values.put("maLoai", obj.maLoai);
@@ -50,7 +36,6 @@ public class SachDAO {
     public int update(Sach obj){
         ContentValues values = new ContentValues();
 
-        values.put("maSach", obj.maSach);
         values.put("tenSach", obj.tenSach);
         values.put("giaThue", obj.giaThue);
         values.put("maLoai", obj.maLoai);
