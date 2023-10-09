@@ -10,15 +10,20 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.mob2041_namtmph17849.Adapter.LoaiSachSpinnerAdapter;
 import com.example.mob2041_namtmph17849.Adapter.SachAdapter;
 import com.example.mob2041_namtmph17849.Adapter.ThanhVienAdapter;
+import com.example.mob2041_namtmph17849.DAO.LoaiSachDAO;
 import com.example.mob2041_namtmph17849.DAO.SachDAO;
 import com.example.mob2041_namtmph17849.DAO.ThanhVienDAO;
+import com.example.mob2041_namtmph17849.Model.LoaiSach;
 import com.example.mob2041_namtmph17849.Model.Sach;
 import com.example.mob2041_namtmph17849.Model.ThanhVien;
 import com.example.mob2041_namtmph17849.R;
@@ -31,13 +36,17 @@ public class QuanLySachFragment extends Fragment {
     ArrayList<Sach> list;
     FloatingActionButton fab;
     Dialog dialog;
-    EditText edMaSach, edTenSach, edGiaThue, edMaLoai;
+    EditText edMaSach, edTenSach, edGiaThue;
     Button btnLuu,btnHuy;
-
+    Spinner spMaLoai;
     static SachDAO dao;
     SachAdapter adapter;
     Sach item;
+    LoaiSachSpinnerAdapter loaiSachSpinnerAdapter;
+    ArrayList<LoaiSach> listLoaiSach;
+    LoaiSachDAO loaiSachDAO;
 
+    int maLoai, positionMaLoai;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -67,16 +76,39 @@ public class QuanLySachFragment extends Fragment {
         edMaSach = dialog.findViewById(R.id.edMaSach);
         edTenSach = dialog.findViewById(R.id.edTenSach);
         edGiaThue = dialog.findViewById(R.id.edGiaThue);
-        edMaLoai = dialog.findViewById(R.id.edMaLoai);
+        spMaLoai = dialog.findViewById(R.id.spMaLoai);
         btnLuu = dialog.findViewById(R.id.btnLuu);
         btnHuy = dialog.findViewById(R.id.btnHuy);
+        loaiSachDAO = new LoaiSachDAO(context);
+        listLoaiSach = new ArrayList<LoaiSach>();
+        listLoaiSach = (ArrayList<LoaiSach>) loaiSachDAO.getAll();
+        loaiSachSpinnerAdapter = new LoaiSachSpinnerAdapter(context,listLoaiSach);
+        spMaLoai.setAdapter(loaiSachSpinnerAdapter);
+
+        spMaLoai.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                maLoai = listLoaiSach.get(position).maLoai;
+                Toast.makeText(context, "Chọn "+listLoaiSach.get(position).hoTen,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
         edMaSach.setEnabled(false);
         if(type !=0){
             edMaSach.setText(String.valueOf(item.maSach));
             edTenSach.setText(item.tenSach);
             edGiaThue.setText(String.valueOf(item.giaThue));
-            edMaLoai.setText(String.valueOf(item.maLoai));
+            spMaLoai.setSelection(positionMaLoai);
+            for(int i = 0; i < listLoaiSach.size(); i++)
+            if(item.maLoai == (listLoaiSach.get(i).maLoai)){
+                positionMaLoai = i;
+            }
         }
         btnHuy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +122,7 @@ public class QuanLySachFragment extends Fragment {
                 item = new Sach();
                 item.tenSach = edTenSach.getText().toString();
                 item.giaThue = Integer.parseInt(edGiaThue.getText().toString());
-                item.maLoai = Integer.parseInt(edMaLoai.getText().toString());
+                item.maLoai = maLoai;
                 if(validate()>0){
                     if(type == 0){
                         if(dao.insert(item)>0){
@@ -140,7 +172,7 @@ public class QuanLySachFragment extends Fragment {
 
     public  int validate(){
         int check  = 1;
-        if(edTenSach.getText().length() ==0|| edGiaThue.getText().length()==0||edMaLoai.getText().length()==0){
+        if(edTenSach.getText().length() ==0|| edGiaThue.getText().length()==0){
             Toast.makeText(getContext(),"Bạn phải nhập dầy đủ thông tin!",Toast.LENGTH_SHORT).show();
             check =-1;
         }

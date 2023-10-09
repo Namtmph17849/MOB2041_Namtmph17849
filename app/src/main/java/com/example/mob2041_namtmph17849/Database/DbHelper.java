@@ -54,8 +54,8 @@ public class DbHelper extends SQLiteOpenHelper {
                         "tienThue INTEGER NOT NULL)";
         db.execSQL(createTablePhieuMuon);
 
-//        db.execSQL("insert into LoaiSach(hoTen) values ('Thiếu nhi'), ('Tình cảm'), ('Giáo khoa')");
-//        db.execSQL("insert into Sach(tenSach, giaThue, maLoai) values ('Hay doi day', 2500, 1), ('Hoa tuyet diem', 2000, 2)");
+        db.execSQL("insert into LoaiSach(hoTen) values ('Thiếu nhi'), ('Tình cảm'), ('Giáo khoa')");
+        db.execSQL("insert into Sach(tenSach, giaThue, maLoai) values ('Hay doi day', 2500, 1), ('Hoa tuyet diem', 2000, 2)");
         db.execSQL("insert into ThuThu values ('namht', 'Nam', '123')");
     }
 

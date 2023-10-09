@@ -72,10 +72,11 @@ public class PhieuMuonDAO {
         Cursor c = db.rawQuery(sql, selectionArgs);
             while (c.moveToNext()){
                 PhieuMuon obj = new PhieuMuon();
+                obj.maPM = Integer.parseInt(c.getString(c.getColumnIndex("maPM")));
                 obj.maTV = Integer.parseInt(c.getString(c.getColumnIndex("maTV")));
                 obj.maTT = c.getString(c.getColumnIndex("maTT"));
                 obj.maSach = Integer.parseInt(c.getString(c.getColumnIndex("maSach")));
-                obj.ngay = Date.valueOf(c.getString(c.getColumnIndex("ngay")));
+                obj.ngay = c.getString(c.getColumnIndex("ngay"));
                 obj.traSach = Integer.parseInt(c.getString(c.getColumnIndex("traSach")));
                 obj.tienThue = Integer.parseInt(c.getString(c.getColumnIndex("tienThue")));
                 list.add(obj);

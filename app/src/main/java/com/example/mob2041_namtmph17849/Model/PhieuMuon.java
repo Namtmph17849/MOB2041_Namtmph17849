@@ -1,5 +1,6 @@
 package com.example.mob2041_namtmph17849.Model;
 
+
 import java.util.Date;
 
 public class PhieuMuon {
@@ -8,12 +9,12 @@ public class PhieuMuon {
     public int maTV;
     public int maSach;
 
-    public Date ngay;
+    public String ngay;
 
     public int traSach;
     public int tienThue;
 
-    public PhieuMuon(int maPM, String maTT, int maTV, int maSach, Date ngay, int traSach, int tienThue) {
+    public PhieuMuon(int maPM, String maTT, int maTV, int maSach, String ngay, int traSach, int tienThue) {
         this.maPM = maPM;
         this.maTT = maTT;
         this.maTV = maTV;
@@ -58,11 +59,11 @@ public class PhieuMuon {
         this.maSach = maSach;
     }
 
-    public Date getNgay() {
+    public String getNgay() {
         return ngay;
     }
 
-    public void setNgay(Date ngay) {
+    public void setNgay(String ngay) {
         this.ngay = ngay;
     }
 

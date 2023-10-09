@@ -8,46 +8,44 @@
     android:paddingTop="20dp"
     android:background="@color/white">
 <EditText
-    android:layout_width="350dp"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
     android:hint="Mã Phiếu Mượn"
     android:id="@+id/edMaPhieuMuon"/>
-    <androidx.appcompat.widget.AppCompatSpinner
+    <Spinner
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
         android:id="@+id/spThanhVien"
         />
-    <androidx.appcompat.widget.AppCompatSpinner
+    <Spinner
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:spinnerMode="dialog"
         android:id="@+id/spTenSach"
         />
 
     <TextView
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/tvNgay"
+        android:id="@+id/tvNgayDialog"
         android:text="Ngày: "/>
 
     <TextView
         android:layout_marginTop="20dp"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/tvTienThue"
+        android:id="@+id/tvTienThueDialog"
         android:text="Tiền thuê: "/>
     <CheckBox
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:text="Lưu mật khẩu"
+        android:text="Đã trả sách"
         android:id="@+id/chkTrSach"
         android:theme="@style/checkbox_color"
-        android:paddingEnd="220dp"
+        android:paddingEnd="20dp"
         />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -61,6 +59,7 @@
             android:layout_marginHorizontal="5dp"
             android:layout_height="wrap_content"
             android:text="Lưu"
+            android:layout_weight="1"
             app:iconGravity="textStart"
             android:backgroundTint="@color/orangepoly"
             app:icon="@drawable/baseline_save_24"
@@ -69,6 +68,7 @@
             android:id="@+id/btnHuy"
             app:iconTint="@color/black"
             app:iconGravity="textStart"
+            android:layout_weight="1"
             app:icon="@drawable/baseline_highlight_off_24"
             android:layout_marginHorizontal="5dp"
             android:layout_width="170dp"

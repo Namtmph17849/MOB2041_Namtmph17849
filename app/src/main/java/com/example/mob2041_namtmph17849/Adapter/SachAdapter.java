@@ -11,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.mob2041_namtmph17849.DAO.LoaiSachDAO;
 import com.example.mob2041_namtmph17849.Fragment.QuanLySachFragment;
 import com.example.mob2041_namtmph17849.Fragment.QuanLyThanhVienFragment;
+import com.example.mob2041_namtmph17849.Model.LoaiSach;
 import com.example.mob2041_namtmph17849.Model.Sach;
 import com.example.mob2041_namtmph17849.Model.ThanhVien;
 import com.example.mob2041_namtmph17849.R;
@@ -25,6 +27,8 @@ public class SachAdapter extends ArrayAdapter<Sach> {
     private ArrayList<Sach> lists;
     TextView tvMaSach, tvTenSach,tvGiaThue, tvMaLoai;
     ImageView imgDel;
+    LoaiSachDAO loaiSachDAO;
+
     public SachAdapter(@NonNull Context context, QuanLySachFragment fragment, ArrayList<Sach> lists) {
         super(context, 0, lists);
         this.context = context;
@@ -46,8 +50,10 @@ public class SachAdapter extends ArrayAdapter<Sach> {
             tvTenSach.setText("Tên sách: "+item.tenSach);
             tvGiaThue = v.findViewById(R.id.tvGiaThue);
             tvGiaThue.setText("Giá thuê: "+item.giaThue);
+            loaiSachDAO = new LoaiSachDAO(context);
+            LoaiSach loaiSach = loaiSachDAO.getID(String.valueOf(item.maLoai));
             tvMaLoai = v.findViewById(R.id.tvMaLoai);
-            tvMaLoai.setText("Mã Loại: "+item.maLoai);
+            tvMaLoai.setText("Mã Loại: "+loaiSach.maLoai);
             imgDel = v.findViewById(R.id.imgXoaSach);
         }
         imgDel.setOnClickListener(new View.OnClickListener() {
